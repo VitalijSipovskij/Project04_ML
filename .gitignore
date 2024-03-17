@@ -1,0 +1,19 @@
+# Virtual environments
+venv/
+env/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore Python compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Dependency directories and files
+/lib/
+/lib64/
+/dist/
+
+# Jupyter Notebook and Colaboratory file
+*.ipynb
