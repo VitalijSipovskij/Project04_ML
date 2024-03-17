@@ -56,3 +56,31 @@ decision boundary shapes.
 Overall, the parameters chosen as the best reflect a careful consideration of the trade-offs between model complexity, 
 regularization, and generalization, tailored to the specific characteristics and requirements of the dataset and 
 regression problem at hand.
+
+---
+To change the parameters and test their effect on model performance, modify the values within the param_grids 
+dictionary. Each key in the dictionary corresponds to a regression model, and the associated value is another 
+dictionary containing the parameters and their possible values for that model. 
+
+`# Define parameter grids for GridSearchCV
+param_grids = {
+    'Linear Regression': {},
+    'Ridge Regression': {'alpha': [0.1, 1, 10]},
+    'Decision Tree': {'max_depth': [3, 5, 7, 9]},
+    'Random Forest': {'n_estimators': [50, 100, 150], 'max_depth': [3, 5, 7]},
+    'Gradient Boosting': {'n_estimators': [50, 100, 150], 'learning_rate': [0.05, 0.1, 0.2]},
+    'SVR': {'kernel': ['linear', 'rbf'], 'C': [0.1, 1, 10]},
+    'XGBoost': {'n_estimators': [50, 100, 150], 'learning_rate': [0.05, 0.1, 0.2]}
+}
+`
+
+For example, to adjust the parameters for Ridge Regression, change the values within the dictionary associated with the 
+key 'Ridge Regression'. The 'alpha' parameter can be set to different values such as [0.01, 0.1, 1, 10] to see how it 
+affects the model's performance.
+
+Similarly, parameters for other models like Decision Tree, Random Forest, Gradient Boosting, SVR, and XGBoost can be 
+modified by changing the values within their respective dictionaries. For instance, 'max_depth' for Decision Tree can 
+be adjusted to different values like [3, 5, 7, 9, None] to explore its impact on the model's behavior.
+
+After modifying the parameters, rerun the code to train the models with the new parameter settings and evaluate their 
+performance to determine the optimal configuration for each model.
