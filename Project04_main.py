@@ -22,7 +22,6 @@ data = pd.read_csv("Dataset - Factors Influencing Technology Adoption in Consume
 data = data.reset_index(drop=True)
 
 # Handle missing values: Consider imputation techniques instead of dropping rows
-# For simplicity, let's continue with dropping rows with missing values for now
 data = data.dropna()
 
 # Encode categorical variables
@@ -134,7 +133,7 @@ if best_model_name_r2 in ['Decision Tree', 'Random Forest', 'Gradient Boosting',
 
     # Plot feature importance
     plt.figure(figsize=(10, 6))
-    print(importance_df)  # Print importance_df
+    print(importance_df)
     plt.barh(importance_df['Feature'][:5], importance_df['Importance'][:5], color='skyblue')
     plt.xlabel('Importance')
     plt.ylabel('Feature')
